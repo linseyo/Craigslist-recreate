@@ -4,5 +4,5 @@ categories = [
     ]
 
 categories.each do |category|
-  Category.create(name: "category")
+  Category.create(name: category)
 end

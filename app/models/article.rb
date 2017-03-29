@@ -1,3 +1,5 @@
 class Article < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :category
+
+  validates :title, :email, :secret_link, presence: true
 end

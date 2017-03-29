@@ -1,0 +1,2 @@
+get '/categories' do
+end

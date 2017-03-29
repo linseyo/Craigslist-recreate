@@ -1,0 +1,6 @@
+<h1>All the things for sale</h1>
+<h3>Most recent listings appear at top</h3>
+
+<% @articles.each do |article| %>
+  <a href="articles/<%= article.id %>"><%= article.title %></a>
+<% end %>

@@ -15,9 +15,12 @@
       <% end %>
     </p>
 
-    <form method="post">
-        <button type="submit"
+    <form action= <%= "/categories/#{@category.id}/articles/new" %>  method="get">
+      <button type="submit">Create A New Article</button>
+    </form>
 
 
+
+    <HR>
     <a href="/">Take Me Home</a>
 </div>

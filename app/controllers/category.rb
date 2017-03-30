@@ -8,6 +8,11 @@ end
 get '/categories/:category_id/articles' do
   @category = Category.find(params[:category_id])
   @category_articles = Article.where("articles.category_id = ?", params[:category_id])
-  p @category_articles
   erb :'categories/articles'
+end
+
+
+get '/categories/:category_id/articles/new' do
+	@category = Category.find(params[:category_id])
+	erb :'articles/new'
 end

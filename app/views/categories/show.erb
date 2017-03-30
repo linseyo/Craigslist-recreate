@@ -1,5 +1,10 @@
 <div name='wrapper' align='center'>
 
-<h2></h2>
+<h2><%= @category.name %></h2>
+
+  <% @articles.each do |article| %>
+    <p><%= article.name %></p>
+  <% end %>
 
 </div>
+

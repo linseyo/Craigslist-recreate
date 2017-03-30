@@ -1,4 +1,4 @@
-# NOTE: Putting a lot of comments for my own comprehension later on - Julie
+# # NOTE: Putting a lot of comments for my own comprehension later on - Julie
 
 get '/' do
 
@@ -6,7 +6,7 @@ get '/' do
   redirect to '/categories'
 end
 
-###################### READ #####################
+# ###################### READ #####################
 
 get '/categories' do
   @categories = Category.all.order(:name)
@@ -15,8 +15,9 @@ get '/categories' do
   erb :'categories/index'
 end
 
-get '/categories/:category_id/articles'
+get '/categories/:category_id/articles' do
   @category = Category.find(params[:category_id])
+  @articles = Article.all.order(:name).select{ |article| article.category_id == params[:category_id]}
 
   # Page that lists all articles in given category
   erb :'categories/show'

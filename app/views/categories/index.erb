@@ -1,0 +1,7 @@
+<div><a href="/categories/new">Create a new category</a>
+<h2>Kregg Zliszt</h2>
+<ul>
+  <% @categories.each do |category| %>
+    <li><a href=<%="/categories/#{category.id}"%>><%= category.title %></a></li>
+  <% end %>
+</ul>

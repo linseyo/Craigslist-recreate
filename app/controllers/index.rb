@@ -1,7 +1,6 @@
 # NOTE: Putting a lot of comments for my own comprehension later on - Julie
 
 get '/' do
-  @categories = Categories.all
 
   # Creating redirect for user-experience & RESTful convention
   redirect to '/categories'
@@ -10,6 +9,7 @@ end
 ###################### READ #####################
 
 get '/categories' do
+  @categories = Category.all.order(:name)
 
   # Page that lists all categories
   erb :'categories/index'

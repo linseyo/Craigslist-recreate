@@ -6,7 +6,7 @@ get '/' do
   redirect to '/categories'
 end
 
-########### READ ##########
+###################### READ #####################
 
 get '/categories' do
 
@@ -20,7 +20,7 @@ get '/categories/:category_id/articles/:id'
   erb :'categories/show'
 end
 
-########## CREATE ##########
+##################### CREATE #####################
 
 get '/categories/:category_id/articles/new'
 
@@ -34,7 +34,7 @@ post '/categories/:category_id/articles'
   redirect to '/categories/:category_id/articles/:id'
 end
 
-########## UPDATE ##########
+##################### UPDATE #####################
 
 get '/categories/:categories_id/articles/:id/edit'
 
@@ -48,6 +48,6 @@ put '/categories/:categories_id/articles/:id'
   redirect to '/categories/:category_id/articles/:id'
 end
 
-########## DESTROY ##########
+##################### DESTROY #####################
 
 

@@ -1,0 +1,9 @@
+<form align='center' name='new_article' action='/articles/new/<%= @catagory.id %>' method='post'>
+  <label>Enter a new article:</label><br>
+  <input type="text" name="article[price]" placeholder="Your price..."><br>
+  <input type="text" name="article[email]" placeholder="Your email..."><br>
+  <input type="text" name="article[title]" placeholder="Your title..."><br>
+  <textarea rows="4" cols="50" name="article[description]">
+  </textarea><br>
+  <input type="submit" value="Post article">
+</form>

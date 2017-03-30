@@ -1,0 +1,18 @@
+<h2 class='container' align="center">
+  <a href="/categories/<%= @category.id%>">
+    <%= @category.name %>
+  </a>
+</h2>
+<a href="/categories/<%= @category.id%>/articles/new"><button>Create new article</button></a>
+
+<% if @category.articles %>
+  <% @category.articles.each do |article|%>
+    <div class='container'>
+      <p align='center'>
+        <a href="/categories/<%=@category.id%>/articles/<%=article.id%>">
+          <%= article.title %>
+        </a>
+      </p>
+    </div>
+  <% end %>
+<% end %>

@@ -11,3 +11,8 @@ post '/categories' do
   Category.create(params['category'])
   redirect to '/categories'
 end
+
+get '/categories/:id' do
+  @category = Category.find(params[:id])
+  erb :'categories/show'
+end

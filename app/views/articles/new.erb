@@ -1,0 +1,10 @@
+<form name="create_article" action="/categories/<%= @category.id %>/articles" method="post">
+  <fieldset>
+    <legend>Create Article:</legend>
+    <input type="text" name="article[title]" placeholder="Title...">
+    <input type="text" name="article[description]" placeholder="Description...">
+    <input type="text" name="article[price]" placeholder="Price...">
+    <input type="text" name="article[email]" placeholder="Your email...">
+    <input type="submit" value="Create!">
+  </fieldset>
+</form>

@@ -1,14 +1,17 @@
 require 'faker'
 
+Category.delete_all
+Article.delete_all
+
 category_names = [
-                  "petcare",
-                  "clothes",
-                  "furniture",
-                  "tutoring"
+                  "Petcare",
+                  "Clothes",
+                  "Furniture",
+                  "Tutoring"
                  ]
 
 category_names.each do |name|
-  Category.create(name: name)
+  Category.find_or_create_by(name: name)
 end
 
 params = {

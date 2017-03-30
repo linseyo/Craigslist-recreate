@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -15,9 +15,14 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Craigslist Jr.</title>
 </head>
 <body>
+  <h1>Craigslist Jr.</h1>
+  <nav>
+    <a href="/categories">Categories</a>
+  </nav>
   <%= yield %>
+  <footer>*Use of 'Jr.' does not mean this site is for children.</footer>
 </body>
 </html>

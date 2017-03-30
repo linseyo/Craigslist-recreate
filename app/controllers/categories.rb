@@ -1,4 +1,4 @@
 get '/categories' do
   @categories = Category.all
-  erb :'/categories'
+  erb :'/categories/index'
 end

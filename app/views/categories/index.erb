@@ -1,0 +1,8 @@
+<% @categories.each do |category| %>
+  <div class="container">
+    <h1><a href="<%="/categories/#{category.id}"%>"><%= category.name %></a></h1>
+    <form id="delete_entry" action=<%= "/categories/#{category.id}/articles/new"%> method="get">
+      <button type="submit">Post New Article</button>
+    </form>
+  </div>
+<% end %>

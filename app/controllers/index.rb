@@ -15,11 +15,12 @@ get '/categories' do
   erb :'categories/index'
 end
 
-# get '/categories/:category_id/articles'
+get '/categories/:category_id/articles'
+  @category = Category.find(params[:category_id])
 
-#   # Page that lists all articles in given category
-#   erb :'categories/show'
-# end
+  # Page that lists all articles in given category
+  erb :'categories/show'
+end
 
 # ##################### CREATE #####################
 

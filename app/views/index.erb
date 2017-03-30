@@ -5,7 +5,7 @@
   <table>
     <tr><th>Categories</th></tr>
     <% @categories.each do |category| %>
-    <tr><td> - <a href="/categories?q=<%= category.name %>"> <%= category.name %></a> </td></tr>
+    <tr><td> - <a href="/articles?q=<%= category.name %>"> <%= category.name %></a> </td></tr>
     <% end %>
   </table>
 </div>

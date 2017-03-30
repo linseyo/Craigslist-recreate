@@ -1,15 +1,10 @@
 <div class="container">
-  <h1><%= @category %></h1>
-  <p>The Web's Local Paper</p>
-
+  <h1>Craigslist Junior</h1>
+  
   <table>
-    <tr>
-      <th>Categories</th>
-    </tr>
-    <% @categories.each do |category| %>
-    <tr>
-      <td> <a href="/articles/<%= category.name %>"> - <%= category.name %></a> </td>
-    </tr>
-    <% end %>
+  <tr><th>Articles</th></tr>
+  <% @category.each do |article| %>
+  <tr><td>- <%= article.title %></td></tr>
+  <% end %>
   </table>
 </div>

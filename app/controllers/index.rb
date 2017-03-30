@@ -1,10 +1,8 @@
 get '/' do
-  @categories = Category.all
-  # Look in app/views/index.erb
-  erb :'/index'
+  redirect to '/categories'
 end
 
 get '/categories' do
-  @category = Category.list_articles(params["q"]).flatten
-  erb :'/articles/index'
+  @categories = Category.all
+  erb :'/index'
 end

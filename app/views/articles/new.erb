@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Create new post</h1>
+  <form action=<%="/categories/#{@category.id}/articles"%> method="post">
+    <fieldset>
+      <label>Title:</label>
+      <input type="text" name="article[title]">
+    </fieldset>
+    <fieldset>
+      <label>Description:</label>
+      <textarea name="article[body]"></textarea>
+    </fieldset>
+    <fieldset>
+      <label>Price:</label>
+      <input type="text" name="article[price]">
+    </fieldset>
+    <fieldset>
+      <label>Contact info:</label>
+      <input type="text" name="article[contact]">
+    </fieldset>
+    <input type="submit">
+  </form>
+</div>

@@ -4,11 +4,12 @@ get '/articles' do
 end
 
 get '/articles/new' do
+  @categories = Category.order(:name)
   erb :'articles/new'
 end
 
 post '/articles' do
-  Article.create(params)
+  Article.create(params[:article])
   redirect '/articles'
 end
 

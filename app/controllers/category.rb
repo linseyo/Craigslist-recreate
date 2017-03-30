@@ -4,6 +4,7 @@ get '/categories' do
   erb :'categories/index'
 end
 
+
 # Show all articles in a given category
 get '/categories/:category_id/articles' do
   @category = Category.find(params[:category_id])
@@ -12,7 +13,3 @@ get '/categories/:category_id/articles' do
 end
 
 
-get '/categories/:category_id/articles/new' do
-	@category = Category.find(params[:category_id])
-	erb :'articles/new'
-end

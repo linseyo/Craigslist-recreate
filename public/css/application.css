@@ -1,9 +1,26 @@
 .container {
   margin: 20px auto;
   width: 600px;
+  margin-top: 160px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 3px dotted black;
+  background-color: #cceae7;
+  border-radius: 25px;
 }
 th {
   text-align: left;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+}
+
+#main {
+  margin: 20px auto;
+  margin-top: 160px;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 3px dotted black;
+  border-radius: 25px;
+
 }

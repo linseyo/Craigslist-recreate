@@ -29,6 +29,11 @@ get '/categories/:category_id/articles/:id/edit/:secret_key' do
   erb :'articles/edit'
 end
 
+put '/categories/:category_id/articles/:id' do
+  Article.find(params[:id]).update(params['article'])
+  redirect to "/categories/#{params[:category_id]}/articles/#{params[:id]}"
+end
+
 
 
 

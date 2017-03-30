@@ -1,3 +1,15 @@
 <%= erb :'categories/_category_header' %>
-<h1>Hey u can edit it now :)</h1>
-<h2><%= @article.title%></h2>
+<h3 align="center">Edit: <%= @article.title %></h3>
+<div class="container">
+  <form name="create_article" action="/categories/<%= @category.id %>/articles/<%= @article.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <fieldset>
+      <legend>Create Article:</legend>
+      <input type="text" name="article[title]" value=<%= @article.title %>>
+      <textarea name="article[description]"> <%= @article.description %></textarea>
+      <input type="text" name="article[price]" value=<%= @article.price %>>
+      <input type="text" name="article[email]" value=<%= @article.email %>>
+      <input type="submit" value="Update">
+    </fieldset>
+  </form>
+</div>

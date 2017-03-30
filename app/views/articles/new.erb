@@ -11,11 +11,16 @@
   <label for='email'>Email:</label>
   <input type='text', name ='article[email]'><br><br>
   <label for='categories'>Category:</label>
-  <select name="category">
+  <select name='category'>
     <% @categories.each do |category| %>
-      <option value='<%=category.name.downcase %>'><%=category.name%></option>
+      <option value='<%=category.name %>'><%=category.name%></option>
     <% end %>
   </select>
 
   <input type='submit' />
 </form>
+<br>
+
+
+<p>Don't see the right category for your item?</p>
+<a href="/../categories/new">Create a new one!</a>

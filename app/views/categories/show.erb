@@ -1,14 +1,11 @@
-<h1><%= @category.title %></h1>
+<h1><%= @category.name %> Articles</h1>
+
+<% @articles.each do |article| %>
+  <li>
+    <a href="articles/<%= article.id %>"><%= article.title %></a>
 
 
-
-<form action='/categories/<%= @category.id %>/edit' method='get'>
-  <input type='submit' value='Edit this category'>
-</form>
-
-<br>
-
-<form action='/categories/<%= @category.id %>' method='post'>
-  <input type='hidden' name='_method' value='delete'>
-  <input type='submit' value='Delete this category'>
-</form>
+    <em>Posted on <%= article.created_at.localtime %></em>
+  </li>
+  <br>
+  <% end %>

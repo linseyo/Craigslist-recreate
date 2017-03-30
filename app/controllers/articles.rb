@@ -9,7 +9,9 @@ get '/articles/new' do
 end
 
 post '/articles' do
-  Article.create(params[:article])
+  article = Article.create(params[:article])
+  article.category = Category.find_by(name: params[:category])
+  article.save
   redirect '/articles'
 end
 

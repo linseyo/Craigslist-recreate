@@ -5,4 +5,8 @@ class Article < ActiveRecord::Base
   def self.find_article(query)
     Article.all.select{ |listing| listing.title == query }
   end
+
+  def self.find_category(query)
+    Category.all.select{ |topic| topic.name}
+  end
 end

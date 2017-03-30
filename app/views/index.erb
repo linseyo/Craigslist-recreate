@@ -1,11 +1,17 @@
 <div class="container">
   <h1>Craigslist Junior</h1>
-  <p>The Web's Local Paper</p>
+  
+  <h2 class="Welcome">Welcome</h2>
 
-  <table>
-    <tr><th>Categories</th></tr>
-    <% @categories.each do |category| %>
-    <tr><td> - <a href="/articles?q=<%= category.name %>"> <%= category.name %></a> </td></tr>
-    <% end %>
-  </table>
+  <form class="button-home">
+    <button name="categories" type="submit" value="Categories" formmethod="get" formaction='/categories'>Categories</button>
+  </form>
+
+  <form class="button-home">
+    <button type="submit" formmethod="get" formaction='/articles/new'>New Listing</button>
+  </form>
+
+  <form class="button-home">
+    <button name="edit" type="submit" value="edit" formmethod="get" formaction='/categories'>Edit</button>
+  </form>
 </div>

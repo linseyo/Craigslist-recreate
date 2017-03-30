@@ -10,4 +10,7 @@ class Category < ActiveRecord::Base
     matching_articles(query).map{ |category| category.articles }
   end
 
+  def self.find_id(query)
+    Category.all.select{ |topic| topic.name == query}.first.id
+  end
 end

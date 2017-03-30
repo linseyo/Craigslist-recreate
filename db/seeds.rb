@@ -1,6 +1,6 @@
 require 'faker'
 
-categories = ["auto", "bikes", "books", "cell Phones", "electronics", "furniture", "photo + video", "tickets"]
+categories = ["auto", "bikes", "books", "cell phones", "electronics", "furniture", "photo + video", "tickets"]
 
 categories.each do |category|
   Category.create!(name: category)

@@ -4,8 +4,7 @@ get '/' do
   erb :'/index'
 end
 
-get '/articles/:category' do
-  @category = params[:category]
-
+get '/categories' do
+  @category = Category.list_articles(params["q"]).flatten
   erb :'/articles/index'
 end

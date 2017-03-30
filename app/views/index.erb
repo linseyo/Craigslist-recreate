@@ -3,13 +3,9 @@
   <p>The Web's Local Paper</p>
 
   <table>
-    <tr>
-      <th>Categories</th>
-    </tr>
+    <tr><th>Categories</th></tr>
     <% @categories.each do |category| %>
-    <tr>
-      <td> <a href="/category/<%= category.name %>"> - <%= category.name %></a> </td>
-    </tr>
+    <tr><td> - <a href="/categories?q=<%= category.name %>"> <%= category.name %></a> </td></tr>
     <% end %>
   </table>
 </div>

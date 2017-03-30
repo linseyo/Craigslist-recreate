@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Craigslist Junior</h1>
+  
+  <table>
+  <tr><th>Articles</th></tr>
+  <% @category.each do |article| %>
+  <tr><td>- <%= article.title %></td></tr>
+  <% end %>
+  </table>
+</div>

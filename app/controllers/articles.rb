@@ -4,11 +4,12 @@ get '/articles' do
 end
 
 get '/articles/new' do
-
+  erb :'articles/new'
 end
 
 post '/articles' do
-
+  Article.create(params)
+  redirect '/articles'
 end
 
 get '/articles/:id' do
@@ -31,5 +32,6 @@ put '/articles/:id' do
 end
 
 delete '/articles/:id' do
-
+  Article.destroy(params[:id])
+  redirect '/articles'
 end

@@ -1,0 +1,10 @@
+<h1>All the categories</h1>
+
+<a href="/categories/new">Create new listing!</a>
+<br><br>
+
+<% @categories.each do |category| %>
+  <a href="categories/<%= category.id %>"><%= category.title %></a>
+  <em>Posted on <%= category.created_at.localtime %></em>
+  <br>
+<% end %>

@@ -3,10 +3,14 @@
 
 <form action='/articles/<%= @article.id %>' method='post'>
   <input type='hidden' name='_method' value='put' />
-  <input type='text', value='<%= @article.title %>', name ='title'>
-  <input type='text', value='<%= @article.price %>', name ='price'>
-  <input type='text', value='<%= @article.description %>', name ='description'>
-  <input type='text', value='<%= @article.price %>', name ='email'>
+  <label for='title'>Title:</label>
+  <input type='text', value='<%= @article.title %>', name ='title'><br>
+  <label for='price'>Price:</label>
+  <input type='text', value='<%= @article.price %>', name ='price'><br>
+  <label for='description'>Description:</label>
+  <input type='text', value='<%= @article.description %>', name ='description'><br>
+  <label for='email'>Email:</label>
+  <input type='text', value='<%= @article.email %>', name ='email'><br><br>
   <input type='submit' />
 
 </form>

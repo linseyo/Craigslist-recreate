@@ -1,6 +1,11 @@
 <h1>All the things for sale</h1>
 <h3>Most recent listings appear at top</h3>
 
+<a href="/articles/new">Create new listing!</a>
+<br><br>
+
 <% @articles.each do |article| %>
   <a href="articles/<%= article.id %>"><%= article.title %></a>
+  <em>Posted on <%= article.created_at.localtime %></em>
+  <br>
 <% end %>

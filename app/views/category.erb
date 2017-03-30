@@ -1,0 +1,11 @@
+ <h2><%=@category.title%></h2>
+
+<ui>
+ <%@category.articales.each do |articale| %>
+ <article>
+   <a href = <%="#{@category.id}/articales/#{articale.id}"%>><%="#{articale.title}"%></a>
+   </article>
+ <%end%>
+</ui>
+
+<a href = <%="categories/#{@category.id}/articales/create"%>>Create an Article</a>

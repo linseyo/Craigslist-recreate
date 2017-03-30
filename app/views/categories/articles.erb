@@ -1,28 +1,22 @@
 <div class="container" align="center">
   <h1>YOU MADE IT TO ALL THE ARTICLES</h1>
     <p>
+    <HR>
       <% @category_articles.each do |article| %>
-        <li>
-        <%= article.title %>
-        </li>
+        <strong> <%= article.title.upcase %> </strong>
+        <br><br>
+        Description: <%= article.description %>
+        <br><br>
+        Price: <%= article.price %>
+        <br><br>
+        Contact: <%= article.contact %>
         <br>
-        <li>
-        <%= article.description %>
-        </li>
-        <br>
-        <li>
-        <%= article.price %>
-        </li>
-        <br>
-        <li>
-        <%= article.title %>
-        </li>
-        <br>
+        <HR>
       <% end %>
     </p>
 
 
 
 
-
+    <a href="/">Take Me Home</a>
 </div>

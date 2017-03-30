@@ -19,4 +19,4 @@ Article.create(title: "Chessboard", description: "Missing a chessboard? Well I g
 
 Article.create(title: "Canon 60D Body Only", description: "Selling a Canon 60D body. Mint Condition! Great for photo enthusiast", contact: "photonerd@gmail.com", price: 500, category_id: 7)
 
-
+Article.create(title: "Olympus EM10 MKII", description: "Micro 4/3! Used for 1 month. Includes kit lens", contact: "microdot@gmail.com", price: 600, category_id: 7)

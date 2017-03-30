@@ -6,7 +6,7 @@ post '/categories/:category_id/articles' do
 end
 
 get '/categories/:category_id/articles' do
-  category = Category.where("id = #{params[:category_id]}")[0]
+  category = Category.find_by(id: params[:category_id])
   @articles = category.articles
   erb :'articles/index'
 end
@@ -21,3 +21,4 @@ get '/categories/:category_id/articles/:id' do
   erb :'articles/show'
 end
 
+# get '/categories/:category_id/articles'

@@ -1,7 +1,8 @@
 <div class="container" align="center">
 <h1>YOU MADE IT TO THE ARTICLESSSSS ALL THE ARTICLES</h1>
   <p><% @articles.each do |article|%>
-        <%= article.title %><br>
+        <a href="/articles/<%=article.id%>">
+            <%= article.title %><br>
       <% end %>
   </p>
 

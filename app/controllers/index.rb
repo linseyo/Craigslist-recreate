@@ -17,7 +17,7 @@ end
 
 get '/categories/:category_id/articles' do
   @category = Category.find(params[:category_id])
-  @articles = Article.all.order(:name).select{ |article| article.category_id == params[:category_id]}
+  @articles = @category.articles
 
   # Page that lists all articles in given category
   erb :'categories/show'

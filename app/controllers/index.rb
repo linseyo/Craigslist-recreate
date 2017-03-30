@@ -23,6 +23,14 @@ get '/categories/:category_id/articles' do
   erb :'categories/show'
 end
 
+get '/categories/:category_id/articles/:id' do
+  @category = Category.find(params[:category_id])
+  @articles = Article.find(params[:id])
+
+  # Page that lists all articles in given category
+  erb :'categories/articles/show'
+end
+
 # ##################### CREATE #####################
 
 # get '/categories/:category_id/articles/new'

@@ -3,3 +3,8 @@ get '/categories/:category_id/articles' do
   @articles = category.articles
   erb :'article_index'
 end
+
+get '/categories/:category_id/articles/:id' do
+  @article = Article.find(params[:id])
+  erb :'article_show'
+end

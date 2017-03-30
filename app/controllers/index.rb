@@ -15,7 +15,7 @@ get '/categories' do
   erb :'categories/index'
 end
 
-# get '/categories/:category_id/articles/:id'
+# get '/categories/:category_id/articles'
 
 #   # Page that lists all articles in given category
 #   erb :'categories/show'

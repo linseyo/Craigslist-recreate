@@ -1,1 +1,6 @@
-<h3>Catagorie: <%= @catagory.title %></h3>
+<h3>Catagory: <%= @catagory.title %></h3>
+
+
+<% @articles.each do |article| %>
+  <h2><%= article.title %></h2>
+<% end %>

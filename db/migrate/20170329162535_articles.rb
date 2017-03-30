@@ -5,6 +5,7 @@ class Articles < ActiveRecord::Migration
       t.string :email
       t.string :title
       t.text :description
+      t.integer :catagory_id
       t.timestamps null: false
     end
   end

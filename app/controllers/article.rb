@@ -16,6 +16,10 @@ end
 post '/categories/:category_id/articles' do 
 	new_article = Article.create(params['article'])
 	@category = Category.find(params[:category_id])
-	
-	
+	@category.articles << new_articles
+	redirect to ('/categories/#{category.id}/articles/#{article.id}/secret_key')
+end
+
+get '/categories/#{category.id}/articles/#{article.id}/secret_key' do
+	erb :'articles/secret_key'
 end

@@ -5,6 +5,6 @@ get '/articles' do
 end
 
 get '/articles/show' do 
-
+  @article = Article.find_article(params["q"]).first
   erb :'/articles/show'
 end

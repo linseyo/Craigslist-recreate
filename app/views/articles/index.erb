@@ -1,6 +1,10 @@
 <h1>All the things for sale</h1>
 <h3>Most recent listings appear at top</h3>
 
+<% if @key %>
+  <p>Here's the link to edit your post: <a href="/articles/<%= @id %>/edit?key=<%= @key %>">Unique Editing Link</a></p>
+<% end %>
+
 <a href="/articles/new">Create new article!</a>
 <br><br>
 

@@ -1,0 +1,19 @@
+<div class="container" align="center">
+  <h1>MADE IT TO THE EDIT</h1>
+    <form name="edit_article" action="/articles/<%= @article.id %>" method="post">
+      <input type="hidden" name="_method" value="put">
+
+        Description:
+        <textarea name="article[description]" rows="10" col="30"><%= @article.description %></textarea>
+        <br>
+        Title:
+        <input type="text" name="article[title]" value="<%= @article.title %>">
+        Price:
+        <input type="text" name="article[price]" value="<%= @article.price %>">
+        Contact:
+        <input type="text" name="article[contact]" value="<%= @article.contact %>">
+        <br>
+        <input type="submit" value="Confirm Changes">
+
+      </form>
+</div>

@@ -19,9 +19,20 @@ get '/articles/:id' do
   erb :'articles/show'
 end
 
+get '/articles/:id/edit' do
+  @article = Article.find(params[:id])
+  erb :'articles/edit'
+end
+
 post '/categories/:category_id/articles' do
 	new_article = Article.create(params['article'])
 	category = Category.find(params[:category_id])
 	category.articles << new_article
 	redirect to "/categories/#{category.id}/articles/#{new_article.id}/secret_key"
+end
+
+put '/articles/:id' do
+  @article = Article.find(params[:id])
+  @article.update(params['article'])
+  erb :'articles/show'
 end

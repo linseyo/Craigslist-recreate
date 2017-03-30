@@ -13,6 +13,10 @@
         <HR>
     </p>
 
+    <form action= "/articles/<%= @article.id %>/edit" method="get">
+      <input type="text" pattern="<%=@article.secret_link%>" placeholder="Enter Secret Key Here">
+      <button type="submit">Proceed to Edit</button>
+    </form>
 
 
 

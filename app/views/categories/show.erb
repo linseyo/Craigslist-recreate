@@ -1,9 +1,4 @@
-<h2 class='container' align="center">
-  <a href="/categories/<%= @category.id%>">
-    <%= @category.name %>
-  </a>
-</h2>
-<a href="/categories/<%= @category.id%>/articles/new"><button>Create new article</button></a>
+<%= erb :'categories/_category_header' %>
 
 <% if @category.articles %>
   <% @category.articles.each do |article|%>

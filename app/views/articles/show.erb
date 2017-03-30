@@ -1,8 +1,4 @@
-<h2 class='container' align="center">
-  <a href="/categories/<%= @category.id%>">
-    <%= @category.name %>
-  </a>
-</h2>
+<%= erb :'categories/_category_header' %>
 <h3 align="center"><%= @article.title%></h3>
 <p align="center">Description: <%= @article.description%></p>
 <p align="center">Price: <%= @article.price%></p>

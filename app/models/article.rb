@@ -1,8 +1,8 @@
 class Article < ActiveRecord::Base
   belongs_to :category
 
-  before_validation :create_secret_link
-
+  before_validation :create_secret_link, :create_key_url
+  validates :title, :email, :secret_link, :key_url, presence: true
 
   def create_secret_link
     if self.secret_link == nil
@@ -18,6 +18,20 @@ class Article < ActiveRecord::Base
     end
   end
 
+  def create_key_url
+    if self.key_url == nil
+
+      key = ""
+      8.times {key += self.random_character}
+
+      until Article.find_by(key_url: key) == nil do
+        key = ""
+        8.times {key += self.random_character}
+      end
+      self.key_url = key
+    end
+  end
+
   def random_character
     coin = Random.new.rand(0..1)
     case coin
@@ -27,6 +41,4 @@ class Article < ActiveRecord::Base
       rand(0..9).to_s
     end
   end
-
-  validates :title, :email, :secret_link, presence: true
 end

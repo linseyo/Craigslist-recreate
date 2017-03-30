@@ -1,0 +1,28 @@
+<div class="container" align="center">
+  <h1>YOU MADE IT TO ALL THE ARTICLES</h1>
+    <p>
+      <% @category_articles.each do |article| %>
+        <li>
+        <%= article.title %>
+        </li>
+        <br>
+        <li>
+        <%= article.description %>
+        </li>
+        <br>
+        <li>
+        <%= article.price %>
+        </li>
+        <br>
+        <li>
+        <%= article.title %>
+        </li>
+        <br>
+      <% end %>
+    </p>
+
+
+
+
+
+</div>

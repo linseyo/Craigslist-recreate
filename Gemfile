@@ -1,6 +1,9 @@
 
 source 'https://rubygems.org'
 
+# SecureRandom for Secret Key
+gem 'rubysl-securerandom'
+
 # PostgreSQL driver
 gem 'pg'
 

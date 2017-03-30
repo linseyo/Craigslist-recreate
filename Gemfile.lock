@@ -46,6 +46,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    rubysl-securerandom (2.0.0)
     shotgun (0.9.1)
       rack (>= 1.0)
     sinatra (1.4.7)
@@ -78,7 +79,11 @@ DEPENDENCIES
   pg
   rake
   rspec
+  rubysl-securerandom
   shotgun
   sinatra
   sinatra-contrib
   thin
+
+BUNDLED WITH
+   1.14.6

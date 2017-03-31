@@ -41,4 +41,9 @@ class Article < ActiveRecord::Base
       rand(0..9).to_s
     end
   end
+
+  private
+
+  def generate_random_string
+  end
 end

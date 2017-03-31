@@ -20,17 +20,11 @@ class Article < ActiveRecord::Base
 
   def create_key_url
     if self.key_url == nil
-
       key = ""
-      8.times {key += self.random_character}
-
-      until Article.find_by(key_url: key) == nil do
-        key = ""
-        8.times {key += self.random_character}
-      end
-      self.key_url = key
+      generate_random_string({key_url: key})
     end
   end
+
 
   def random_character
     coin = Random.new.rand(0..1)
@@ -44,6 +38,12 @@ class Article < ActiveRecord::Base
 
   private
 
-  def generate_random_string
+  def generate_random_string(args)
+    8.times {args[:key_url] += random_character}
+    until Article.find_by(args) == nil  do
+      args[:key_url] = ""
+      8.times {args[:key] += random_character}
+    end
+    self.key_url = args[:key_url]
   end
 end

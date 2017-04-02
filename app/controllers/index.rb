@@ -1,4 +1,4 @@
 get '/' do
-  erb :index
- # redirect '/categories'
+ 
+ redirect '/categories'
 end

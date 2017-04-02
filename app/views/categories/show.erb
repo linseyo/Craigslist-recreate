@@ -1,0 +1,11 @@
+<h1 Welcome to CraigsList, Junior! </h1>
+<br>
+<h2>Please select from the following categories:</h2>
+<br>
+<br>
+
+<%@categories.each do |category|%>
+  <br>
+  <a href="categories/<%=category.id%>/articles"><%=category.name%></a>
+<%end%> 
+

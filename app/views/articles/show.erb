@@ -1,19 +1,22 @@
 <h1 CraigsList, Junior...Your #1 Source for Cool Stuff! </h1>
 <br>
+<br>
+<h2 Here is information for your selected article.</h2>
+<br>
+<br>
+Title: <%=@article.title%>
+<br>
+Description: <%=@article.description%>
+<br>
+Price: <%=@article.price%>
+<br>
+Contact: <%=@article.email%>
+<br>
 
-<%if @articles.length == 0%>
-  <h2>There are no articles in this category. Why not be the first?</h2>
-<%else%>
+ <a href="../articles">Return to List of Articles</a>
 
-  <h2>Articles for Category <em><%=@category.name%>:</em></h2> 
-  <br>
-  <br>
+  
 
 
-  <%@articles.each do |article|%>
-    <br>
-    <a href="categories/<%=@category.id%>/articles/<%=article.id%>"><%=article.description%></a>
-  <%end%> 
-<%end%>
 
 

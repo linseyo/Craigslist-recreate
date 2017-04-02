@@ -1,0 +1,23 @@
+<h1 CraigsList, Junior...Your #1 Source for Cool Stuff! </h1>
+<br>
+
+<%if @articles.length == 0%>
+  <h2>There are no articles in this category. Why not be the first?</h2>
+<%else%>
+  <h2>Articles for Category <em><%=@category.name%>:</em></h2> 
+  <br>
+  <br>
+  <%@articles.each do |article|%>
+    <br>
+    <a href="articles/<%=article.id%>"><%=article.description%></a>
+  <%end%> 
+<%end%> 
+<br>
+<br>
+<a href="articles/new">Create New Article in This Category</a>
+
+
+
+
+
+

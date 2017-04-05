@@ -1,3 +1,8 @@
+<button id="showForm">Create new category</button>
+<form id="createCategory" class="hidden">
+  <input type="text" placeholder="category name" />
+  <input type="submit" />
+</form>
 <h2 align="center">Categories</h2>
 <% if @categories %>
   <% @categories.each do |category|%>

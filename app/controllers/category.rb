@@ -1,3 +1,5 @@
+require 'json'
+
 get '/categories' do
   @categories = Category.all
   erb :'categories/index'
@@ -8,8 +10,12 @@ get '/categories/new' do
 end
 
 post '/categories' do
-  Category.create(params['category'])
-  redirect to '/categories'
+  category = Category.create(params['category'])
+  if request.xhr?
+    category.to_json
+  else
+    redirect to '/categories'
+  end
 end
 
 get '/categories/:id' do

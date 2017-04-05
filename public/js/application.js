@@ -1,7 +1,22 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+    $('#showForm').click(function() {
+        $('#createCategory').removeClass('hidden');
+    });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    $('#createCategory').submit(function(event) {
+        event.preventDefault();
+        var newCategory = $(this).children().val();
+        $.ajax({
+            url: '/categories',
+            type: 'POST',
+            data: {
+                category: {
+                    name: newCategory,
+                },
+            },
+        }).done(function(response) {
+            var name = JSON.parse(response).name;
+            $('body').append("<div>" + name + "</div>");
+        });
+    });
 });

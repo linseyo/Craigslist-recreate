@@ -3,7 +3,4 @@ get '/catagories/:catagory_id/articles/new' do
   erb :'articles/new'
 end
 
-post '/catagories/:catagory_id/articles/new' do
-  @article = Article.create(params['article'])
-  redirect to 'articles/index'
-end
+

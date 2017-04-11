@@ -5,4 +5,6 @@
   <h2><%= article.title %></h2>
 <% end %>
 
-<a href="/catagories/<%= @catagory.id %>/articles/new"><h3>Create a new article here</h3>
+<a class="show-form" data-catagory-id="<%= @catagory.id %>" href="/catagories/<%= @catagory.id %>/articles/new">
+  <h3>Create a new article here</h3>
+</a>

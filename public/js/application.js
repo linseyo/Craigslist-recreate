@@ -1,7 +1,24 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('.show-catagory').on('click', function(e){
+    e.preventDefault();
+    var url = $(this).attr('href')
+    var id = $(this).attr('id')
+    $.ajax({
+      type: 'GET',
+      url: url
+    }).done(function(response){
+      $('#category-' + id).append(response)
+    })
+  })
+  $('.container').on('click', '.show-form', function(e){
+    e.preventDefault();
+    var url = $(this).attr('href');
+    var id = this.dataset.catagoryId;
+    $.ajax({
+      type: 'GET',
+      url: url
+    }).done(function(response){
+      $('#category-' + id).append(response)
+    })
+  });
 });

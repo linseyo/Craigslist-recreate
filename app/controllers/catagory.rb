@@ -6,5 +6,9 @@ end
 get '/catagories/:id' do
   @catagory = Catagory.find(params[:id])
   @articles = @catagory.articles
-  erb :'articles/index'
+  if request.xhr?
+    erb :'articles/index', layout: false
+  else
+    erb :'articles/index'
+  end
 end

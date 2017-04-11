@@ -1,5 +1,7 @@
 <form align='center' name='new_article' action='/catagories/<%= @catagory.id %>/articles' method='post'>
   <label>Enter a new article:</label><br>
+  <input type="hidden" name="article[catagory_id]" value='<%= @catagory.id%>'
+  />
   <input type="text" name="article[price]" placeholder="Your price..."><br>
   <input type="text" name="article[email]" placeholder="Your email..."><br>
   <input type="text" name="article[title]" placeholder="Your title..."><br>

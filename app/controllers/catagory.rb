@@ -8,8 +8,3 @@ get '/catagories/:id' do
   @articles = @catagory.articles
   erb :'articles/index'
 end
-
-post '/catagories/:id' do
-  @article = Article.create(params['article'])
-  redirect to 'catagories/:id'
-end

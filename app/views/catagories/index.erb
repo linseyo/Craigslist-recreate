@@ -4,7 +4,7 @@
 
   <% @catagory.each do |catagory| %>
     <ul>
-      <li id="category-<%= catagory.id %>">
+      <li class="catagory" id="category-<%= catagory.id %>">
         <h3>
           <a class="show-catagory" id="<%= catagory.id %>" href="/catagories/<%= catagory.id %>"><%= catagory.title %></a>
         </h3>

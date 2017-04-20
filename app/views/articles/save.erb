@@ -1,16 +1,19 @@
-<h1 CraigsList, Junior...Your #1 Source for Cool Stuff! </h1>
+<h1> Sparky's List, Junior...Your #1 Source for Cool Stuff! </h1>
 <br>
-<br>
-<h2 Here is information for your secret URL to edit your article:</h2>
+<br> 
+<%if @save_or_create == 'save'%>
+  <% msg = 'Your changes have been saved.'%>
+<%else%>
+  <% msg = 'Your article has been added.'%>
+<%end%>
+<h2> <%=msg%> Use this secret URL to edit your article!</h2>
 <br>
 <br>
 Top Secret URL: <%=@secret_url%>
 <br>
 <br>
-
 <br>
-
- <a href="/">Return to CraigsList Jr. Homepage!</a>
+<a href="/">Return to Sparky's List, Junior, list of categories!</a>
 
   
   

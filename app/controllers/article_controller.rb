@@ -15,7 +15,7 @@ end
 get '/categories/:category_id/articles/:id/edit' do 
   @article = Article.find(params[:id])
   if params[:key] == @article.secret_key
-    "Add code to EDIT @article"
+    erb :"../views/articles/edit"
   else
     redirect '/'
   end
@@ -33,7 +33,6 @@ get '/categories/:category_id/articles/:id' do
   @category = Category.find(params[:category_id])
   erb :"../views/articles/show"
 end
-
 
 # save newly created article
 post '/categories/:category_id/articles' do
@@ -55,9 +54,6 @@ end
 
 # save updates made to this article
 put '/categories/:category_id/articles/:id' do
-
-
-
 
 
 

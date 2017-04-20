@@ -1,3 +1,9 @@
+
+def make_random_string(length)
+  return ('a'..'z').to_a.shuffle[0,length].join
+end
+
+
 # show all articles in a particular category
 get '/categories/:category_id/articles' do
   @category = Category.find(params[:category_id])
@@ -9,11 +15,10 @@ end
 get '/categories/:category_id/articles/:id/edit' do 
   @article = Article.find(params[:id])
   if params[:key] == @article.secret_key
-    "Add code to EDIT article with category:#{Category.find(params[:category_id]).name} and article description:#{Article.find(params[:id]).description}"
+    "Add code to EDIT @article"
   else
     redirect '/'
   end
-
 end
 
 # show form to create a new article
@@ -33,19 +38,18 @@ end
 # save newly created article
 post '/categories/:category_id/articles' do
   # make new article record and shovel into category
-  random_string=('a'..'z').to_a.shuffle[0,5].join
-  puts 'random string to follow'
-  puts random_string
+  random_string= make_random_string(6)
+  while Article.find_by(secret_key: random_string) != nil 
+     random_string=('a'..'z').to_a.shuffle[0,5].join
+  end
   this_category=Category.find(params[:category_id])
-  puts 'params[article] to follow'
-  p params['article']
   params['article']['secret_key'] = random_string
   new_article=Article.new(params['article'])
   this_category.articles << new_article
   this_category.save
   # get article id of just-saved article
   new_article_id=new_article.id
-  @secret_url = "localhost:9393/categories/#{params[:category_id]}/articles/#{new_article_id}/#{random_string}"
+  @secret_url = "localhost:9393/categories/#{params[:category_id]}/articles/#{new_article_id}/edit?key=#{random_string}"
   erb :'../views/articles/save'
 end
 

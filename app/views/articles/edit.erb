@@ -3,17 +3,20 @@
 <br>
 <form action='../<%=@article.id%>' method='post'>
   <input type='hidden' name='_method' value='put'/>
-  Title: <input type='text' name= 'title' value="<%=@article.title%>"  />
+  <label for="article-title">Title: </label><input type='text' id='article-title' name= 'title' value="<%=@article.title%>"  />
   <br>
-  Description: <input type='text' name='description' value="<%=@article.description%>"   />
+  <label for="article-description">Description: </label><input type='text' id='article-description' name='description' value="<%=@article.description%>"   />
   <br>
-  Price: <input type='text' name='price' value="<%=@article.price%>"/>
+  <label for="article-price">Price: </label><input type='text' id='article-price' name='price' value="<%=@article.price%>"/>
   <br>
-  E-mail: <input type='text' name='email' value="<%=@article.email%>"  />
+  <label for='article-email'>E-mail: </label><input type='text' id='article-email' name='email' value="<%=@article.email%>"  />
   <br>
   <input type='submit' value='Save Changes' />
 </form>
 
+<!-- note: the for attribute in the label is handy: when the for attribute is defined, the label becomes a 'clickable' area that will focus the input. For example, clicking the label of a text input will focus your cursor in the box; clicking the label of a checkbox will check (or uncheck)
+the box. the for value should be exactly the same as the id value for that input field.
+ -->
 
 
   

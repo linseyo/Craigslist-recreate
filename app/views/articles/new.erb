@@ -5,15 +5,15 @@
   <input type='hidden' name='category_id' value=<%=@category.id%>
   Category:<input type='text' name=category_name value=<%=@category.name%> readonly><br>
   <fieldset>
-    <legend>Title</legend>
-    <input type='text' name= 'article[title]' ><br>
+    <legend for='article-title'>Title</legend>
+    <input type='text' id='article-title' name= 'article[title]' ><br>
   </fieldset>
   <br>
   <fieldset>
     <legend>Listing Details</legend>
-    <label>Description: </label> <input type='text' name='article[description]'><br>
-    <label>Price (in cents): </label><input type='text' name='article[price]'><br>
-    <label>E-mail: </label><input type='text' name='article[email]'><br>
+    <label for='article-description'>Description: </label> <input type='text' id='article-description' name='article[description]'><br>
+    <label for='article-price'>Price (in cents): </label><input type='text' id='article-price' name='article[price]'><br>
+    <label for='article-email'>E-mail: </label><input type='text' id='article-email' name='article[email]'><br>
   </fieldset>
   <br>
   <input type='submit' value='Save Article'>

@@ -4,7 +4,6 @@
 <%else%>
   <h2>Articles for Category <em><%=@category.name%>:</em></h2> 
   <br>
-  <br>
   <%@articles.each do |article|%>
     <br>
     <a href="articles/<%=article.id%>"><%=article.title%></a>

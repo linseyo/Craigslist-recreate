@@ -1,9 +1,7 @@
-<h1 Welcome to CraigsList, Junior! </h1>
-<br>
-<h2>For which category would you like to view articles?</h2>
-<br>
-<br>
 
+
+<h2>Please click on a category to view its articles.</h2>
+<br>
 <%@categories.each do |category|%>
   <br>
   <a href="categories/<%=category.id%>/articles"><%=category.name%></a>

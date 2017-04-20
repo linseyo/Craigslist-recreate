@@ -1,7 +1,6 @@
 
 <h2> Congratulations! You have entered the secret URL and you may edit this article!</h2>
 <br>
-<br>
 <form action='../<%=@article.id%>' method='post'>
   <input type='hidden' name='_method' value='put'/>
   Title: <input type='text' name= 'title' value="<%=@article.title%>"  />

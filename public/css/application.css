@@ -1,5 +1,5 @@
 .container {
-  margin: 20px auto;
+  margin: 30px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
@@ -11,3 +11,8 @@ th {
 h1 {font-size: 80%;}
 h2 {font-size: 70%;}
   
+/*change form field color when user hovers over it */
+input[type=text]:hover {
+        background-color:#ffff66;
+        border-color:#999999;
+}

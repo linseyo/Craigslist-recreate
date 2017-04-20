@@ -5,8 +5,8 @@
   <input type='hidden' name='category_id' value=<%=@category.id%>
   Category:<input type='text' name=category_name value=<%=@category.name%> readonly><br>
   <fieldset>
-    <legend for='article-title'>Title</legend>
-    <input type='text' id='article-title' name= 'article[title]' ><br>
+    <legend>Title</legend>
+    <input type='text' name= 'article[title]' ><br>
   </fieldset>
   <br>
   <fieldset>
@@ -21,8 +21,31 @@
 
 
 
+<!-- note: the fieldset value groups the fieldset elements in a box; the fieldset element has a border by default, and the legend will lay itself over that border
+ -->
+<!-- note: the for attribute in the label is handy: when the for attribute is defined, the label becomes a 'clickable' area that will focus the input. For example, clicking the label of a text input will focus your cursor in the box; clicking the label of a checkbox will check (or uncheck)
+the box. the for value should be exactly the same as the id value for that input field.
+ -->
 
-  
+<!-- tabindex property for the input tag (i.e. tabindex="2") : by default, your user will tab through in the order form elements are written in the HTML. If this isn't the order you want them to go through the inputs, you can
+easily add the tabindex property to your inputs; tabindex takes a number value, and will
+hop to the input with the next highest value when you hit that tab key -->
+
+<!-- The accesskey attribute creates a keyboard shortcut that will focus that
+input: the shortcut is Alt (Option) + the accesskey value. Obviously, you wouldn't
+put an accesskey on every input, but it would certainly be useful on, for example, a search box.
+Don't forget to let users know about the shortcut; often this is done by underlining
+the letter, as it's usually part of the label.
+
+<label for="search"><span class="shortcut">S</span>earch</label>
+<input type="text" name="s" id="search" accesskey="s" /> -->
+
+<!-- for form field (usually a text box) change colour when it's focused
+  jquery to get all input elements with type=text: $(":text")
+  or to use css: input[type=text]:hover {
+        background-color:#ffff66;
+        border-color:#999999;
+} -->
 
 
 

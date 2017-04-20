@@ -6,14 +6,14 @@
   Category:<input type='text' name=category_name value=<%=@category.name%> readonly><br>
   <fieldset>
     <legend>Title</legend>
-    Title: <input type='text' name= 'article[title]' ><br>
+    <input type='text' name= 'article[title]' ><br>
   </fieldset>
   <br>
   <fieldset>
     <legend>Listing Details</legend>
-    Description: <input type='text' name='article[description]'><br>
-    Price (in cents): <input type='text' name='article[price]'><br>
-    E-mail: <input type='text' name='article[email]'><br>
+    <label>Description: </label> <input type='text' name='article[description]'><br>
+    <label>Price (in cents): </label><input type='text' name='article[price]'><br>
+    <label>E-mail: </label><input type='text' name='article[email]'><br>
   </fieldset>
   <br>
   <input type='submit' value='Save Article'>

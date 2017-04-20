@@ -54,6 +54,8 @@ end
 
 # save updates made to this article
 put '/categories/:category_id/articles/:id' do
+  puts 'in articles controller for put -save article - params to follow'
+  p params
   @article = Article.find(params[:id])
   @article.title=params[:title]
   @article.description=params[:description]

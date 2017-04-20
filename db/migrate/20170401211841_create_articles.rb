@@ -6,6 +6,7 @@ class CreateArticles < ActiveRecord::Migration
       t.money :price, null: false
       t.string :email, null: false
       t.integer :category_id, null: false
+      t.string :secret_key, null: false
 
       t.timestamps null: false
     end

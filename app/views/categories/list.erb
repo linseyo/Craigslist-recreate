@@ -1,10 +1,13 @@
 
 
-<h2>Please click on a category to view its articles.</h2>
+<h2>Click on a category to view its listings.</h2>
 <br>
-<%@categories.each do |category|%>
-  <br>
-  <a href="categories/<%=category.id%>/articles"><%=category.name%></a>
-<%end%> 
+<fieldset>
+  <legend>Exciting Categories</legend>
+  <%@categories.each do |category|%>
+    <br>
+    <a href="categories/<%=category.id%>/articles"><%=category.name%></a>
+  <%end%> 
+</fieldset>
 
 

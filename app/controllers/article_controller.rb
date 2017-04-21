@@ -33,6 +33,13 @@ get '/categories/:category_id/articles/:id' do
   erb :"../views/articles/show"
 end
 
+# delete article
+delete '/categories/:category_id/articles/:id' do
+  @article = Article.find(params[:id])
+  @article.destroy
+  erb :"../views/articles/delete"
+end
+
 # save newly created article
 post '/categories/:category_id/articles' do
   # make new article record and shovel into category
@@ -54,12 +61,11 @@ end
 
 # save updates made to this article
 put '/categories/:category_id/articles/:id' do
-  puts 'in articles controller for put -save article - params to follow'
-  p params
   @article = Article.find(params[:id])
   @article.title=params[:title]
   @article.description=params[:description]
-  @article.price= params[:price]
+  @article.price=params[:price]
+  @article.email=params[:email]
   @article.save 
   cat_id = @article.category_id
   @secret_url = "localhost:9393/categories/#{cat_id}/articles/#{@article.id}/edit?key=#{@article.secret_key}"

@@ -1,18 +1,33 @@
 
-<h2> Congratulations! You have entered the secret URL and you may edit this article!</h2>
+<h2> Congratulations! You have entered the secret URL. You may edit this listing!</h2>
 <br>
-<form action='../<%=@article.id%>' method='post'>
-  <input type='hidden' name='_method' value='put'/>
-  <label for="article-title">Title: </label><input type='text' id='article-title' name= 'title' value="<%=@article.title%>"  />
+<fieldset>
+  <legend>Your Listing:</legend>
+  <form action='../<%=@article.id%>' method='post'>
+    <input type='hidden' name='_method' value='put'/>
+    <label for="article-title">Title: </label><input type='text' id='article-title' name= 'title' value="<%=@article.title%>"  />
+    <br>
+    <br>
+    <label for="article-description">Description: </label><input type='text' id='article-description' name='description' value="<%=@article.description%>"   />
+    <br>
+    <br>
+    <label for="article-price">Price: </label><input type='text' id='article-price' name='price' value="<%=@article.price%>"/>
+    <br>
+    <br>
+    <label for='article-email'>E-mail: </label><input type='text' id='article-email' name='email' value="<%=@article.email%>"  />
+    <br>
+    <br>
+    <input type='submit' value='Save Changes' />
+  </form>
+</fieldset>
+
+<br>
+<form action='.' method='post'>
+  <input type='hidden' name='_method' value='delete'>
   <br>
-  <label for="article-description">Description: </label><input type='text' id='article-description' name='description' value="<%=@article.description%>"   />
-  <br>
-  <label for="article-price">Price: </label><input type='text' id='article-price' name='price' value="<%=@article.price%>"/>
-  <br>
-  <label for='article-email'>E-mail: </label><input type='text' id='article-email' name='email' value="<%=@article.email%>"  />
-  <br>
-  <input type='submit' value='Save Changes' />
+  <input type='submit' value='Delete This Listing'>
 </form>
+
 
 
 

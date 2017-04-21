@@ -10,10 +10,11 @@ th {
 
 h1 {font-size: 110%;}
 h2 {font-size: 90%;}
-  
+
 /*change form field color when user hovers over it */
 input[type=text]:hover {
         background-color:#ffff66;
         border-color:#999999;
 }
 
+p.error-msg {color: red; }

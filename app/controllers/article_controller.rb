@@ -1,17 +1,17 @@
 
-def make_random_string(length)
-  return ('a'..'z').to_a.shuffle[0,length].join
-end
+# def make_random_string(length)
+#   return ('a'..'z').to_a.shuffle[0,length].join
+# end
 
 # show list of articles in a particular category
 get '/categories/:category_id/articles' do
   @category = Category.find(params[:category_id])
   @articles = @category.articles
-  erb :"../views/articles/list"    
+  erb :"../views/articles/list"
 end
 
 # show form to edit an article - but only if article's secret key has been entered
-get '/categories/:category_id/articles/:id/edit' do 
+get '/categories/:category_id/articles/:id/edit' do
   @article = Article.find(params[:id])
   if params[:key] == @article.secret_key
     erb :"../views/articles/edit"
@@ -21,14 +21,16 @@ get '/categories/:category_id/articles/:id/edit' do
 end
 
 # show form to create a new article
-get '/categories/:category_id/articles/new' do 
+get '/categories/:category_id/articles/new' do
   @category= Category.find(params[:category_id])
   erb :'../views/articles/new'
 end
 
-# show form to view an article
+# show an article
 get '/categories/:category_id/articles/:id' do
   @article = Article.find(params[:id])
+  puts 'in show an article route; @article to follow'
+  p @article
   @category = Category.find(params[:category_id])
   erb :"../views/articles/show"
 end
@@ -43,8 +45,8 @@ end
 # save newly created article
 post '/categories/:category_id/articles' do
   # make new article record and shovel into category
-  random_string= make_random_string(6)
-  while Article.find_by(secret_key: random_string) != nil 
+  random_string= Randomable.make_random_string(6)
+  while Article.find_by(secret_key: random_string) != nil
      random_string=('a'..'z').to_a.shuffle[0,5].join
   end
   this_category=Category.find(params[:category_id])
@@ -66,9 +68,19 @@ put '/categories/:category_id/articles/:id' do
   @article.description=params[:description]
   @article.price=params[:price]
   @article.email=params[:email]
-  @article.save 
-  cat_id = @article.category_id
-  @secret_url = "localhost:9393/categories/#{cat_id}/articles/#{@article.id}/edit?key=#{@article.secret_key}"
-  @save_or_create = 'save'
-  erb :'../views/articles/save'
+  if @article.save
+    puts '*************IN SAVE  okay'
+    cat_id = @article.category_id
+    @secret_url = "localhost:9393/categories/#{cat_id}/articles/#{@article.id}/edit?key=#{@article.secret_key}"
+    @save_or_create = 'save'
+    erb :'../views/articles/save'
+  else
+    puts '***************IN SAVE NOT okay'
+    puts '@article.errors to follow'
+    p @article.errors
+    @object_with_errors = @article
+    puts 'message to follow'
+    p @article.errors.messages[1]
+    erb :'../views/articles/errors'
+  end
 end

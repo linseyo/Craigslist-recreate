@@ -8,8 +8,8 @@ th {
   text-align: left;
 }
 
-h1 {font-size: 80%;}
-h2 {font-size: 70%;}
+h1 {font-size: 110%;}
+h2 {font-size: 90%;}
   
 /*change form field color when user hovers over it */
 input[type=text]:hover {

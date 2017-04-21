@@ -3,8 +3,6 @@
   <h2>There are no listings in this category. You can change that. Add a listing now!</h2>
 <%else%>
   <h2>Listings for Category <em><%=@category.name%>:</em></h2>
-  <br>
-  <h2>Click on a listing to see its details.</h2>
   <%@articles.each do |article|%>
     <br>
     <a href="articles/<%=article.id%>"><%=article.title%></a>

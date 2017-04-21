@@ -1,8 +1,4 @@
 
-# def make_random_string(length)
-#   return ('a'..'z').to_a.shuffle[0,length].join
-# end
-
 # show list of articles in a particular category
 get '/categories/:category_id/articles' do
   @category = Category.find(params[:category_id])
@@ -69,18 +65,12 @@ put '/categories/:category_id/articles/:id' do
   @article.price=params[:price]
   @article.email=params[:email]
   if @article.save
-    puts '*************IN SAVE  okay'
     cat_id = @article.category_id
     @secret_url = "localhost:9393/categories/#{cat_id}/articles/#{@article.id}/edit?key=#{@article.secret_key}"
     @save_or_create = 'save'
     erb :'../views/articles/save'
   else
-    puts '***************IN SAVE NOT okay'
-    puts '@article.errors to follow'
-    p @article.errors
     @object_with_errors = @article
-    puts 'message to follow'
-    p @article.errors.messages[1]
     erb :'../views/articles/errors'
   end
 end

@@ -17,4 +17,4 @@ input[type=text]:hover {
         border-color:#999999;
 }
 
-p.error-msg {color: red; }
+.error-msg {color: red; }

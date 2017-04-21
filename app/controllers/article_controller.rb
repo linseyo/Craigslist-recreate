@@ -25,8 +25,6 @@ end
 # show an article
 get '/categories/:category_id/articles/:id' do
   @article = Article.find(params[:id])
-  puts 'in show an article route; @article to follow'
-  p @article
   @category = Category.find(params[:category_id])
   erb :"../views/articles/show"
 end
@@ -49,12 +47,16 @@ post '/categories/:category_id/articles' do
   params['article']['secret_key'] = random_string
   new_article=Article.new(params['article'])
   this_category.articles << new_article
-  this_category.save
-  # get article id of just-saved article
-  new_article_id=new_article.id
-  @save_or_create= 'create'
-  @secret_url = "localhost:9393/categories/#{params[:category_id]}/articles/#{new_article_id}/edit?key=#{random_string}"
-  erb :'../views/articles/save'
+  if this_category.save
+    # get article id of just-saved article
+    new_article_id=new_article.id
+    @save_or_create= 'create'
+    @secret_url = "localhost:9393/categories/#{params[:category_id]}/articles/#{new_article_id}/edit?key=#{random_string}"
+    erb :'../views/articles/save'
+  else
+    @object_with_errors = new_article
+    erb :'../views/articles/errors'
+  end
 end
 
 # save updates made to this article

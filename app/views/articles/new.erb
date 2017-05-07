@@ -1,0 +1,26 @@
+<div class="container" align="center">
+
+<h1>Article Builder</h1>
+
+<form name="create_article" action="/categories/<%= @category.id %>/articles" method="post">
+
+   	Description:
+    <textarea name="article[description]" placeholder="Description HERE" rows="10" col="30"></textarea>
+    <br>
+    Title:
+    <input type="text" name="article[title]" placeholder="Title HERE">
+    Price:
+    <input type="text" name="article[price]" placeholder="Price HERE">    
+    Contact:
+    <input type="text" name="article[contact]" placeholder="Contact Info HERE">
+    <br>
+    <input type="submit" value="Confirm">
+ 
+</form>
+
+
+
+
+
+
+</div>

@@ -1,23 +1,19 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+<div id="main" align="center">
+<style>
+body {background-color:   #cceae7;}
+p {background-color:  #66c0b7;}
+</style>
+<body>
+  <h1 style="color:#009688; font-size: 144px; "><strong>The List</strong></h1>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  <p>Lookin' for some stuff???</p>
+
+  <p>
+      <a href="/categories">All Categories</a>
+    </p>
+    <p>
+      <a href="/articles">All Articles</a>
+    </p>
+
+</body>
 </div>

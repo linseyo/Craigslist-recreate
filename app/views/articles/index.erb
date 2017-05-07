@@ -1,0 +1,12 @@
+<div class="container" align="center">
+<h1>Look At All Those Articles!</h1>
+  <p><% @articles.each do |article|%>
+        <a href="/articles/<%=article.id%>">
+            <%= article.title %><br>
+      <% end %>
+  </p>
+
+
+  <HR>
+  <a href="/">Take Me Home</a>
+</div>
